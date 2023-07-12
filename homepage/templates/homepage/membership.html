@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h2>Membership Registration</h2>
+
+<form method="post" action="{% url 'membership' %}">
+  {% csrf_token %}
+
+  <label for="membership_type">Membership Type:</label>
+  <select id="membership_type" name="membership_type" required>
+    <option value="annual">Annual</option>
+    <option value="monthly">Monthly</option>
+    <option value="daily">Daily</option>
+  </select><br>
+
+  <input type="submit" value="Register">
+  
+</form>
+
+{% endblock %}

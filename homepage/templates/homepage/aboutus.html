@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>About Us</h1>
+ 
+    <h1>Welcome to {{ park_name1 }}</h1>
+    <h2>Location: {{ location1 }}</h2>
+
+    <img src="{% static 'images/nature.jpeg' %}"  class="center" >
+    <section class="about-section">
+   
+        <p>Welcome to our mountain bike trail, where adventure meets the untamed beauty of nature. Nestled in the heart of {{ park_name1 }}, our trail offers an exhilarating escape for all enthusiasts seeking an adrenaline-fueled journey through rugged terrain.</p>
+        <p>With every twist and turn, you'll be captivated by breathtaking vistas, lush forests, and cascading waterfalls that paint a picturesque backdrop for your epic ride. Our trail caters to riders of all skill levels, from beginners to seasoned pros, with carefully designed features that provide an unforgettable experience.</p>
+        <p>Safety is our top priority, and we ensure well-maintained paths, signage, and obstacles that preserve the natural environment. Join our vibrant community of mountain biking enthusiasts, connect with fellow riders, and embrace the thrill of the ride.</p>
+    </section>
+
+{% endblock %}
+
+
