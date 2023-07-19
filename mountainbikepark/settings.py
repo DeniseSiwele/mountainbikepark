@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-55xxg2sj76(i3dzc1ku&q368ckt7_mq0%-1bzo1k5tjsgaek7_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['roodeplaatmtb.com', 'www.roodeplaatmtb.com']
 
 
 # Application definition
