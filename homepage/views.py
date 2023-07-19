@@ -4,6 +4,10 @@ from .models import CustomUser
 from django.contrib.auth.models import User
 from .models import UserProfile, Membership
 from datetime import datetime, timedelta
+from django.shortcuts import render
+from .models import PaymentForm
+import requests
+from django.conf import settings
 
 def homepage(request):
     context = {
@@ -112,5 +116,40 @@ def register(request):
 
     return render(request, 'homepage/register.html')
 
+
+
+
+def process_payment(request):
+    if request.method == 'POST':
+        card_number = request.POST['card_number']
+        card_name = request.POST['card_name']
+        expiry_date = request.POST['expiry_date']
+        cvv = request.POST['cvv']
+
+        # Construct the payment request payload
+        payload = {
+            'card_number': card_number,
+            'card_name': card_name,
+            'expiry_date': expiry_date,
+            'cvv': cvv,
+            # Add other required fields for Ozow payment request
+        }
+
+        # Send the payment request to Ozow
+        headers = {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer YOUR_OZOW_API_KEY',
+        }
+
+        response = requests.post('https://api.ozow.com/api/v1/payment', json=payload, headers=headers)
+        
+        # Process the response from Ozow and handle success or failure
+        if response.status_code == 200:
+            return redirect('paymentsuccess.html')
+        else:
+            # Handle payment failure
+            return redirect('paymentfailure.html')
+
+    return render(request, 'membership.html')
 
 

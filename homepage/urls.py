@@ -13,5 +13,5 @@ urlpatterns = [
     path('register/', views.register, name ="register"),
     path('restaurant/', views.restaurant, name ="restaurant"),
     path('success/', views.success, name ="success"),
-    
+    path('payment/', views.process_payment, name='process_payment')
 ]
