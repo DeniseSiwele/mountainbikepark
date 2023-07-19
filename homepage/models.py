@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime, timedelta, timezone
-
+from django import forms
 class CustomUser(models.Model):
     name = models.CharField(max_length=100)
     surname = models.CharField(max_length=100)
@@ -44,3 +44,7 @@ class Membership(models.Model):
 
     def is_active(self):
         return self.expiry_date >= timezone.now().date()
+
+class PaymentForm(forms.Form):
+    amount = forms.DecimalField(label='Amount')
+    email = forms.EmailField(label='Email')
