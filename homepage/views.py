@@ -8,6 +8,7 @@ from django.shortcuts import render
 from .models import PaymentForm
 import requests
 from django.conf import settings
+from .models import GalleryImage
 
 def homepage(request):
     context = {
@@ -153,3 +154,10 @@ def process_payment(request):
     return render(request, 'membership.html')
 
 
+def GalleryImage(request):
+   if request.method == 'POST':
+        form = GalleryImage(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('index.html')
+        

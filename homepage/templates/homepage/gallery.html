@@ -1,6 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
+<h1>Gallery</h1>
+<form action="" method= POST enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title"><br>
+    <label for="description">Description:</label>
+    <input type="text" name="description" id="description" ><br>
+    <input type="file" name="image" id="image" accept="image/*" required>
+ <input type="submit" value="submit">
+
+</form>
+
 <div class="gallery-container">
 <img src="{% static 'images/gala.jpeg' %}">
 <img src="{% static 'images/galb.jpeg' %}">
@@ -30,5 +43,10 @@
 <img src="{% static 'images/galz.jpeg' %}">
 <img src="{% static 'images/galzb.jpeg' %}">
 <img src="{% static 'images/galzc.jpeg' %}">
+
+<img src="{{ GalleryImage.image.url }}">
+
 </div>
+
+
 {%endblock%}

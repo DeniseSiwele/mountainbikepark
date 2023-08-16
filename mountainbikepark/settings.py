@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import mysql.connector
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-55xxg2sj76(i3dzc1ku&q368ckt7_mq0%-1bzo1k5tjsgaek7_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['roodeplaatmtb.com', 'www.roodeplaatmtb.com', '127.0.0.1']
 
 
 # Application definition
@@ -82,6 +83,13 @@ DATABASES = {
     }
 }
 
+db_connection = mysql.connector.connect(
+    host='Roodeplaatmtb01.mysql.pythonanywhere-services.com',
+    user='Roodeplaatmtb01',
+    password='oetZNO%$#@!',
+    database='Roodeplaatmtb01$mountainbike',
+    port='3306'
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
