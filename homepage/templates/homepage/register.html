@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
@@ -45,3 +46,52 @@
 {% endblock %}
 
 
+=======
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h2>Register</h2>
+
+<form method="POST" action="{% url 'register' %}">
+    {% csrf_token %}
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" required><br>
+    <label for="surname">Surname:</label>
+    <input type="text" name="surname" id="surname" required><br>
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required><br>
+    <label for="medical_aid">Medical Aid:</label>
+    <input type="text" name="medical_aid" id="medical_aid" required><br>
+    <label for="medical_aid_number">Medical Aid Number:</label>
+    <input type="text" name="medical_aid_number" id="medical_aid_number" required><br>
+    <label for="ice_contact">ICE Contact:</label>
+    <input type="text" name="ice_contact" id="ice_contact" required><br>
+    <label for="ice_name">ICE Name:</label>
+    <input type="text" name="ice_name" id="ice_name" required><br>
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" required><br>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" required><br>
+    
+    <button type="submit">Register</button>
+
+
+</form>
+  
+<h2>Login</h2>
+
+<form method="post">
+  {% csrf_token %}
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" required><br>
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required><br>
+
+  <input type="submit" value="Login">
+</form>
+
+{% endblock %}
+
+
+>>>>>>> 912af2183e0e4d9cd7a893729a28c015950a4761

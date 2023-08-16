@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'base.html' %}
 {% load static %}
 
@@ -138,4 +139,146 @@
 </form>
 
 
+=======
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<h2>Membership Registration</h2>
+
+    <h1>Membership</h1>
+    <ul>
+                 
+                    
+           <div class="row db-padding-btm db-attached">
+                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                     <div class="db-wrapper">
+                         <div class="db-pricing-eleven db-bk-color-one">
+                             <div class="price">
+                                 <sup>R</sup>1700
+                                     <small>per year</small>
+                             </div>
+                             <div class="type">
+                                 Adult
+                             </div>
+                             <ul>
+         
+                                 <li><i class="glyphicon glyphicon-print"></i>Adult - New Membership </li>
+                             </ul>
+                             <div class="pricing-footer">
+         
+                                <a href="#" class="btn db-button-color-square btn-lg">Subscribe</a>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                       <div class="db-wrapper">
+                     <div class="db-pricing-eleven db-bk-color-two popular">
+                         <div class="price">
+                             <sup>R</sup>1600
+                                     <small>per year</small>
+                         </div>
+                         <div class="type">
+                             Student/Pensioner
+                         </div>
+                         <ul>
+         
+                             <li><i class="glyphicon glyphicon-print"></i>Student/Pensioner - New Membership</li>
+                         </ul>
+                            <div class="pricing-footer">
+
+                                <a href="#" class="btn db-button-color-square btn-lg">Subscribe</a>
+                         
+                         </div>
+                     </div>
+                           </div>
+                 </div>
+                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                       <div class="db-wrapper">
+                     <div class="db-pricing-eleven db-bk-color-three">
+                         <div class="price">
+                             <sup>R</sup>800
+                                     <small>per year</small>
+                         </div>
+                         <div class="type">
+                             Minor
+                         </div>
+                         <ul>
+         
+                             <li><i class="glyphicon glyphicon-print"></i>Minor - New Membership</li>
+                         </ul>
+                         <div class="pricing-footer">
+         
+                            <a href="#" class="btn db-button-color-square btn-lg">Subscribe</a>
+                         </div>
+                     </div>
+                           </div>
+                 </div>
+                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                       <div class="db-wrapper">
+                     <div class="db-pricing-eleven db-bk-color-six">
+                         <div class="price">
+                             <sup>R</sup>150
+                                     <small>per day visit</small>
+                         </div>
+                         <div class="type">
+                          Day Visitors
+                         </div>
+                         <ul>
+         
+                             <li><i class="glyphicon glyphicon-print"></i>Day Visitor</li>
+                         </ul>
+                         <div class="pricing-footer">
+         
+                            <a href="#" class="btn db-button-color-square btn-lg">Subscribe</a>
+                         </div>
+                     </div>
+                           </div>
+                 </div>
+             </div>
+         
+         </div>    
+    </ul>
+
+<form method="post" action="{% url 'membership' %}">
+  {% csrf_token %}
+
+  <label for="membership_type">Membership Type:</label>
+  <select id="membership_type" name="membership_type" required>
+    <option value="annual">Annual</option>
+    <option value="monthly">Monthly</option>
+    <option value="daily">Daily</option>
+  </select><br>
+
+  <input type="submit" value="Register">
+  
+</form>
+
+<!-- payment_details.html -->
+<h2>Payment Details</h2>
+<form method="post">
+  {% csrf_token %}
+  
+  <label for="card_number">Card Number:</label>
+  <input type="text" id="card_number" name="card_number" required>
+
+  <label for="card_name">Cardholder Name:</label>
+  <input type="text" id="card_name" name="card_name" required>
+
+  <label for="expiry_date">Expiry Date:</label>
+  <input type="text" id="expiry_date" name="expiry_date" required>
+
+  <label for="cvv">CVV:</label>
+  <input type="text" id="cvv" name="cvv" required>
+
+  <button type="submit">Pay Now</button>
+</form>
+
+
+>>>>>>> 912af2183e0e4d9cd7a893729a28c015950a4761
 {% endblock %}
